@@ -8,7 +8,6 @@ const MainLayout = () => {
   return (
     <div>
        <Header></Header>
-       {/* <Hero></Hero> */}
        <Outlet />
        <Footer></Footer>
 

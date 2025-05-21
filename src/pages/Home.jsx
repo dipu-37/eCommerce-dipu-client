@@ -7,7 +7,7 @@ const Home = () => {
   return (
     <div className='max-w-7xl mx-auto'>
       <HeroSection></HeroSection>
-      {/* <BestSellers></BestSellers> */}
+       <h2 className="text-2xl font-medium md:text-3xl text-gray-800 mb-4 mt-8">Best Sellers</h2>
       <Products></Products>
     </div>
   )

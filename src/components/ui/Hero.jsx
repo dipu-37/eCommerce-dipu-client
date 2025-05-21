@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export default function HeroSection() {
   return (
@@ -10,9 +11,9 @@ export default function HeroSection() {
             Freshness You Can <br /> Trust, Savings You <br /> will Love!
           </h1>
           <div className="flex justify-center md:justify-start gap-4">
-            <button className="bg-green-500 text-white px-6 py-3 rounded-md hover:bg-green-600 transition">
+            <Link to="/products"><button className="bg-green-500 text-white px-6 py-3 rounded-md hover:bg-green-600 transition">
               Shop now
-            </button>
+            </button></Link>
             <button className="flex items-center text-gray-800 font-medium hover:underline">
               Explore deals <span className="ml-1">→</span>
             </button>

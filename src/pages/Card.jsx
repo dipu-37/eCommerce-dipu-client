@@ -1,50 +1,77 @@
-import React from "react";
-import { FaStar, FaShoppingCart } from "react-icons/fa";
+import { FiPlus, FiMinus, FiShoppingCart } from "react-icons/fi";
+import { Link } from "react-router-dom";
+import { useCart } from "../context/cartContext";
+
 const Card = ({ product }) => {
+  const { cart, addToCart, updateCartQty, removeFromCart } = useCart();
+  const quantity = cart[product._id] || 0;
+
+  const handleAddToCart = () => addToCart(product);
+  const increaseQty = () => updateCartQty(product._id, quantity + 1);
+  const decreaseQty = () => {
+    if (quantity === 1) removeFromCart(product._id);
+    else updateCartQty(product._id, quantity - 1);
+  };
+
   return (
-    <div
-      className="border rounded-lg p-4 shadow-sm"
-      style={{
-        borderColor: "color-mix(in oklab, #6B7280 20%, transparent)",
-      }}
-    >
+    <div className=" p-4 w-60 shadow-sm border border-gray-500/20 rounded-md max-w-54 md:px-4 px-3 py-2">
       <img
         src={product.images}
         alt={product.name}
-        className="h-28 mx-auto object-contain"
+        className="h-32 w-full object-contain mb-3"
       />
-      <p className="text-sm text-gray-400 mt-2">{product.category}</p>
-      <h3 className="text-lg font-semibold text-gray-700">{product.name}</h3>
+      <p className="text-sm text-gray-400">{product.category}</p>
+      <h2 className="font-semibold text-lg text-gray-800 mb-1">
+        {product.name}
+      </h2>
 
-      <div className="flex items-center space-x-1 text-green-500 text-sm mt-1">
-        {Array(Math.floor(product.ratings))
-          .fill()
-          .map((_, i) => (
-            <FaStar key={i} />
-          ))}
-        {product.ratings % 1 !== 0 && (
-          <span className="text-xs text-yellow-500">+½</span>
-        )}
-        <span className="text-gray-500 text-xs ml-1">
+      {/* Ratings */}
+      <div className="flex items-center text-green-500 mb-2">
+        <span className="mr-1">⭐</span>
+        <span>{product.ratings.toFixed(1)}</span>
+        <span className="text-gray-500 text-sm ml-1">
           ({product.numReviews})
         </span>
       </div>
 
-      <div className="mt-2 flex items-center space-x-2">
-        <span className="text-lg text-green-600 font-bold">
+      {/* Price */}
+      <div className="flex items-center space-x-2 mb-3">
+        <span className="text-green-600 font-bold text-lg">
           ${product.price}
         </span>
+        {/* <span className="text-gray-400 line-through text-sm">$60</span> */}
       </div>
 
-      <button
-        className="mt-3 w-full flex justify-center items-center gap-2 border rounded-md py-2 text-green-600 hover:bg-green-100"
-        style={{
-          borderColor: "color-mix(in oklab, #6B7280 20%, transparent)", // #6B7280 is Tailwind gray-500
-        }}
-      >
-        <FaShoppingCart />
-        Add
-      </button>
+      <div className="flex items-center space-x-2 mt-3">
+        {/* Add to Cart or Counter */}
+        {quantity === 0 ? (
+          <button
+            onClick={handleAddToCart}
+            className="w-1/2 border border-green-500 text-green-600 rounded-md py-1 hover:bg-green-50 transition flex items-center justify-center"
+          >
+            <FiShoppingCart className="mr-2" />
+            Add
+          </button>
+        ) : (
+          <div className="w-1/2 flex items-center justify-between border border-green-500 rounded-md px-3 py-1">
+            <button onClick={decreaseQty}>
+              <FiMinus className="text-green-600" />
+            </button>
+            <span className="text-green-700 font-semibold">{quantity}</span>
+            <button onClick={increaseQty}>
+              <FiPlus className="text-green-600" />
+            </button>
+          </div>
+        )}
+
+        {/* Always visible Details button */}
+        <Link
+          to={`/product/${product._id}`}
+          className="w-1/2 text-center border border-green-500 text-green-600 rounded-md py-1 hover:bg-gray-100 transition"
+        >
+          Details
+        </Link>
+      </div>
     </div>
   );
 };

@@ -1,27 +1,41 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { FaShoppingCart, FaBars, FaSearch } from "react-icons/fa";
+import { useCart } from "../../context/cartContext";
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const cartItemCount = 9; // Replace with actual cart logic
-
+  const { cart } = useCart(); // ✅ use cart context
+  const cartItemCount = Object.values(cart).reduce((sum, qty) => sum + qty, 0);
   return (
     <nav className=" shadow-sm border-b border-gray-100 sm:m-4">
       <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
         {/* Logo */}
         <div className="flex items-center space-x-2">
-          <img src="../../../src/assets/icons/Screenshot 2025-05-21 113710.png" alt="GreenCart Logo" className="w-8" />
-          <span className="text-2xl font-semibold text-gray-800">greenBazar</span>
+          <img
+            src="../../../src/assets/icons/Screenshot 2025-05-21 113710.png"
+            alt="GreenCart Logo"
+            className="w-8"
+          />
+          <span className="text-2xl font-semibold text-gray-800">
+            greenBazar
+          </span>
         </div>
 
         {/* Desktop Menu */}
         <div className="hidden md:flex items-center space-x-6">
-          <Link to="/seller" className="rounded-full border px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+          <Link
+            to="/seller"
+            className="rounded-full border px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+          >
             Seller Dashboard
           </Link>
-          <Link to="/" className="text-gray-700 hover:text-green-600">Home</Link>
-          <Link to="/products" className="text-gray-700 hover:text-green-600">All Product</Link>
+          <Link to="/" className="text-gray-700 hover:text-green-600">
+            Home
+          </Link>
+          <Link to="/products" className="text-gray-700 hover:text-green-600">
+            All Product
+          </Link>
           <div className="relative hidden lg:block">
             <input
               type="text"
@@ -38,7 +52,10 @@ const Navbar = () => {
               {cartItemCount}
             </span>
           </Link>
-          <Link to="/login" className="bg-green-500 text-white px-6 py-2 rounded-full hover:bg-green-600">
+          <Link
+            to="/login"
+            className="bg-green-500 text-white px-6 py-2 rounded-full hover:bg-green-600"
+          >
             Login
           </Link>
         </div>
@@ -60,10 +77,25 @@ const Navbar = () => {
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
         <div className="md:hidden px-4 py-4 space-y-3 bg-white border-t">
-          <Link to="/" className="block text-gray-700 hover:text-green-600">Home</Link>
-          <Link to="/products" className="block text-gray-700 hover:text-green-600">All Product</Link>
-          <Link to="/contact" className="block text-gray-700 hover:text-green-600">Contact</Link>
-          <Link to="/login" className="block w-fit bg-green-500 text-white px-6 py-2 rounded-full hover:bg-green-600">
+          <Link to="/" className="block text-gray-700 hover:text-green-600">
+            Home
+          </Link>
+          <Link
+            to="/products"
+            className="block text-gray-700 hover:text-green-600"
+          >
+            All Product
+          </Link>
+          <Link
+            to="/contact"
+            className="block text-gray-700 hover:text-green-600"
+          >
+            Contact
+          </Link>
+          <Link
+            to="/login"
+            className="block w-fit bg-green-500 text-white px-6 py-2 rounded-full hover:bg-green-600"
+          >
             Login
           </Link>
         </div>
