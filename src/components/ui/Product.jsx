@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import Card from "./Card"; 
+import Card from "../../pages/Card"; 
 
 const Products = () => {
   const [products, setProducts] = useState([]);
@@ -16,7 +16,7 @@ const Products = () => {
   }, []);
 
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 p-6">
+    <div className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 gap-6 p-6">
       {products.map((product) => (
         <Card key={product._id} product={product} />
       ))}

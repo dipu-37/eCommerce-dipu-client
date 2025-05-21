@@ -7,7 +7,7 @@ import MainLayout from "./layout/MainLayout";
 import Home from "./pages/Home";
 import Shop from "./pages/Shop";
 import AdminLayout from "./layout/AdminLayout";
-import BestSellers from "./components/ui/BestSell";
+
 
 const router = createBrowserRouter([
   {
@@ -19,10 +19,10 @@ const router = createBrowserRouter([
         element: <Home></Home>,
       },
     
-      {
-        path: "/",
-        element: <BestSellers></BestSellers>,
-      },
+      // {
+      //   path: "/",
+      //   element: <BestSellers></BestSellers>,
+      // },
     ],
   },
   // {

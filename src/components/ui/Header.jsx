@@ -12,7 +12,7 @@ const Navbar = () => {
         {/* Logo */}
         <div className="flex items-center space-x-2">
           <img src="../../../src/assets/icons/Screenshot 2025-05-21 113710.png" alt="GreenCart Logo" className="w-8" />
-          <span className="text-2xl font-semibold text-gray-800">greenCart</span>
+          <span className="text-2xl font-semibold text-gray-800">greenBazar</span>
         </div>
 
         {/* Desktop Menu */}
