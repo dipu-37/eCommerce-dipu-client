@@ -11,6 +11,7 @@ import Products from "./components/ui/Product";
 import AllProducts from "./pages/Products";
 import ProductDetail from "./components/ui/ProductDetails";
 import { CartProvider } from "./context/cartContext";
+import CartPage from "./components/ui/CartPage";
 
 
 const router = createBrowserRouter([
@@ -29,6 +30,10 @@ const router = createBrowserRouter([
       {
         path: "/product/:id",
         element:<ProductDetail></ProductDetail>,
+      },
+      {
+        path: "/cart",
+        element:<CartPage></CartPage>,
       },
     
     ],

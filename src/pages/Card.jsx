@@ -36,7 +36,7 @@ const Card = ({ product }) => {
 
       {/* Price */}
       <div className="flex items-center space-x-2 mb-3">
-        <span className="text-green-600 font-bold text-lg">
+        <span className="text-green-700 font-bold text-lg">
           ${product.price}
         </span>
         {/* <span className="text-gray-400 line-through text-sm">$60</span> */}
@@ -47,13 +47,13 @@ const Card = ({ product }) => {
         {quantity === 0 ? (
           <button
             onClick={handleAddToCart}
-            className="w-1/2 border border-green-500 text-green-600 rounded-md py-1 hover:bg-green-50 transition flex items-center justify-center"
+            className="w-1/2 border border-green-200 text-green-600 rounded-md py-1 hover:bg-green-50 transition flex items-center justify-center"
           >
             <FiShoppingCart className="mr-2" />
             Add
           </button>
         ) : (
-          <div className="w-1/2 flex items-center justify-between border border-green-500 rounded-md px-3 py-1">
+          <div className="w-1/2 flex items-center justify-between border border-green-300 rounded-md px-3 py-1">
             <button onClick={decreaseQty}>
               <FiMinus className="text-green-600" />
             </button>
@@ -67,7 +67,7 @@ const Card = ({ product }) => {
         {/* Always visible Details button */}
         <Link
           to={`/product/${product._id}`}
-          className="w-1/2 text-center border border-green-500 text-green-600 rounded-md py-1 hover:bg-gray-100 transition"
+          className="w-1/2 text-center border border-green-200 text-green-600 rounded-md py-1 hover:bg-gray-100 transition"
         >
           Details
         </Link>
