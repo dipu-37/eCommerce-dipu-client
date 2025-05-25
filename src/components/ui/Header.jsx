@@ -27,7 +27,7 @@ const Navbar = () => {
         {/* Logo */}
         <div className="flex items-center space-x-2">
           <img
-            src="../../../src/assets/icons/Screenshot 2025-05-21 113710.png"
+            src="../../../src/assets/icons/download (4).jpg"
             alt="GreenCart Logo"
             className="w-8"
           />

@@ -16,8 +16,9 @@ import Login from "./components/form/Login";
 import Register from "./components/form/Registation";
 import { AuthProvider } from "./context/authContext";
 import PrivateRoute from "./routs/PrivateRoute";
-import AddProductForm from "./components/ui/adminUi/AddProductForm";
+import AddProductForm from "./pages/admin/AddProductForm";
 import AdminDashboard from "./pages/admin/Dashboard";
+import ProductsPage from "./pages/admin/ProductsPage";
 
 const router = createBrowserRouter([
   {
@@ -64,6 +65,10 @@ const router = createBrowserRouter([
     {
       path: "add-product", 
       element: <AddProductForm />,
+    },
+    {
+      path: "product-list", 
+      element: <ProductsPage></ProductsPage>,
     },
   ],
 }

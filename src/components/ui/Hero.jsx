@@ -23,7 +23,7 @@ export default function HeroSection() {
         {/* Right Image */}
         <div className="mt-8 md:mt-0 md:w-1/2">
           <img
-            src="../../../src/assets/images/wicker-basket-filled-fresh-vegetables-260nw-2465411187.png"
+            src="../../../src/assets/images/greenBazar.png"
             alt="Fresh vegetables"
             className="w-full h-auto"
           />
