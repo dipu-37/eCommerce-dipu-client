@@ -14,10 +14,12 @@ export default defineConfig({
   plugins: [react(), tailwindcss()],
   server: {
     host: '0.0.0.0', // ✅ Bind to all IPs so Render can access it
-    port: 5173
+    port: 5173,
+    allowedHosts: ['ecommerce-dipu-client-1.onrender.com'] 
   },
   preview: {
     host: '0.0.0.0', // ✅ For npm run preview on Render
-    port: 4173
+    port: 4173,
+    allowedHosts: ['ecommerce-dipu-client-1.onrender.com'] 
   }
 })
