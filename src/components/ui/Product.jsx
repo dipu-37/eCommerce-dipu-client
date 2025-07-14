@@ -13,7 +13,7 @@ const Products = () => {
   const limit = 10; // You can make this dynamic too
 
   useEffect(() => {
-    let url = `http://localhost:3000/api/v1/products?page=${page}&limit=${limit}`;
+    let url = `https://e-commerce-1-jztd.onrender.com/api/v1/products?page=${page}&limit=${limit}`;
     if (searchTerm) {
       url += `&searchTerm=${encodeURIComponent(searchTerm)}`;
     }

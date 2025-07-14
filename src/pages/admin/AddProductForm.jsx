@@ -27,7 +27,7 @@ const AddProductForm = () => {
     formData.append("file", data.file[0]);
 
     try {
-      const res = await fetch("http://localhost:3000/api/v1/products/create-product", {
+      const res = await fetch("https://e-commerce-1-jztd.onrender.com/api/v1/products/create-product", {
         method: "POST",
         body: formData,
       });

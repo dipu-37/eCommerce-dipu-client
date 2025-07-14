@@ -6,7 +6,7 @@ const BestProducts = () => {
     const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:3000/api/v1/products")
+    fetch("https://e-commerce-1-jztd.onrender.com/api/v1/products")
       .then((res) => res.json())
       .then((data) => {
         if (data.success) {

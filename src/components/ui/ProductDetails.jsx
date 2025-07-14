@@ -11,7 +11,7 @@ const ProductDetail = () => {
   const quantity = cart[id] || 0; // ✅ current quantity
 
   useEffect(() => {
-    axios.get(`http://localhost:3000/api/v1/products/${id}`)
+    axios.get(`https://e-commerce-1-jztd.onrender.com/api/v1/products/${id}`)
       .then((res) => setProduct(res.data.data))
       .catch((err) => console.error(err));
   }, [id]);

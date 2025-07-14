@@ -12,7 +12,7 @@ export const AuthProvider = ({ children }) => {
   const [loading, setLoading] = useState(true);
 
   // Set default axios config
-  axios.defaults.baseURL = "http://localhost:3000/api/v1";
+  axios.defaults.baseURL = "https://e-commerce-1-jztd.onrender.com/api/v1";
   axios.defaults.withCredentials = true; // Send cookies for refresh token
 
   // Fetch user profile using access token
