@@ -14,11 +14,11 @@ import { CartProvider } from "./context/cartContext";
 import CartPage from "./components/ui/CartPage";
 import Login from "./components/form/Login";
 import Register from "./components/form/Registation";
-import { AuthProvider } from "./context/authContext";
 import PrivateRoute from "./routs/PrivateRoute";
 import AddProductForm from "./pages/admin/AddProductForm";
 import AdminDashboard from "./pages/admin/Dashboard";
 import ProductsPage from "./pages/admin/ProductsPage";
+import { AuthProvider } from "./context/AuthContext";
 
 const router = createBrowserRouter([
   {

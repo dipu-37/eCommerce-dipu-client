@@ -1,6 +1,6 @@
 import { useForm } from "react-hook-form";
 import { useNavigate, Link } from "react-router-dom";
-import { useAuth } from "../../context/authContext";
+import { useAuth } from "../../context/AuthContext";
 
 const Register = () => {
   const { register: registerInput, handleSubmit } = useForm();
